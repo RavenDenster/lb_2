@@ -2,7 +2,7 @@ TARGET = menu
 CC = gcc
 
 SRC = ${wildcard *.c}
-OBJ = ${patsubst %.s, %.o, ${SRC}}
+OBJ = ${patsubst %.с, %.o, ${SRC}}
 
 ${TARGET} : ${OBJ}
 	${CC} ${OBJ} -o ${TARGET}

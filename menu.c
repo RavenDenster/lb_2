@@ -1,10 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "index_first_zero.h"
-#include "index_last_zero.h"
-#include "sum_before_and_after.h"
-#include "sum_between.h"
 #include "handler.h"
 
 int main() {
