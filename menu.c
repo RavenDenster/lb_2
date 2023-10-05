@@ -1,7 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "handler.h"
+#include "index_first_zero.h"
+#include "index_last_zero.h"
+#include "sum_before_and_after.h"
+#include "sum_between.h"
+
+const char err_msg[] = "Данные некорректны";
 
 int main() {
     int arr[100];
@@ -21,7 +26,27 @@ int main() {
         if (arr[i] == 0) is_zero = 1;
     }
 
-    if (is_zero == 0) return puts("Данные некорректны");
+    if (is_zero == 0) return puts(err_msg);
 
-    tasks(arr, len_arr, value);
+    int first_zero = index_first_zero(arr, len_arr);
+    int last_zero = index_last_zero(arr, len_arr);
+
+    switch (value)
+    {
+    case 0:
+        printf("%d", first_zero);
+        break;
+    case 1:
+        printf("%d", last_zero);
+        break;
+    case 2:
+        printf("%d", sum_between(arr, len_arr, first_zero, last_zero));
+        break;
+    case 3:
+        printf("%d", sum_before_and_after(arr, len_arr, first_zero, last_zero));
+        break;
+    default:
+        puts(err_msg);
+        break;
+    }
 }

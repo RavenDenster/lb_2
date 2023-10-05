@@ -1,14 +1,11 @@
 TARGET = menu
 CC = gcc
 
-$(TARGET) : menu.o handler.o index_first_zero.o index_last_zero.o sum_before_and_after.o sum_between.o
-	$(CC) menu.o handler.o index_first_zero.o index_last_zero.o sum_before_and_after.o sum_between.o -o $(TARGET)
+$(TARGET) : menu.o index_first_zero.o index_last_zero.o sum_before_and_after.o sum_between.o
+	$(CC) menu.o index_first_zero.o index_last_zero.o sum_before_and_after.o sum_between.o -o $(TARGET)
 
-menu.o : menu.c handler.h index_first_zero.h index_last_zero.h sum_before_and_after.h sum_between.h
+menu.o : menu.c index_first_zero.h index_last_zero.h sum_before_and_after.h sum_between.h
 	$(CC) -c menu.c -o menu.o 
-
-handler.o : handler.c index_first_zero.h index_last_zero.h sum_before_and_after.h sum_between.h
-	$(CC) -c handler.c -o handler.o
 
 index_first_zero.o : index_first_zero.c index_first_zero.h
 	$(CC) -c index_first_zero.c -o index_first_zero.o
