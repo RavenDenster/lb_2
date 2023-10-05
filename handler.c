@@ -21,10 +21,10 @@ void tasks(int *arr, int len_arr, int value)
         printf("%d", last_zero);
         break;
     case 2:
-        printf("%d", sum_between(arr, len_arr, first_zero, last_zero));
+        printf("%d", sum_between(arr, len_arr));
         break;
     case 3:
-        printf("%d", sum_before_and_after(arr, len_arr, first_zero, last_zero));
+        printf("%d", sum_before_and_after(arr, len_arr));
         break;
     default:
         puts("Данные некорректны");
