@@ -1,4 +1,4 @@
-#include "index_last_zero.h"
+#include "index_first_zero.h"
 
 int index_first_zero(int* arr, int len_arr) {
     int first_zero, i;
