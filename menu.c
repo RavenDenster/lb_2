@@ -28,25 +28,23 @@ int main() {
 
     if (is_zero == 0) return puts(err_msg);
 
-    int first_zero = index_first_zero(arr, len_arr);
-    int last_zero = index_last_zero(arr, len_arr);
-
     switch (value)
     {
     case 0:
-        printf("%d", first_zero);
+        printf("%d", index_first_zero(arr, len_arr));
         break;
     case 1:
-        printf("%d", last_zero);
+        printf("%d", index_last_zero(arr, len_arr));
         break;
     case 2:
-        printf("%d", sum_between(arr, len_arr, first_zero, last_zero));
+        printf("%d", sum_between(arr, len_arr));
         break;
     case 3:
-        printf("%d", sum_before_and_after(arr, len_arr, first_zero, last_zero));
+        printf("%d", sum_before_and_after(arr, len_arr));
         break;
     default:
         puts(err_msg);
         break;
     }
+
 }
